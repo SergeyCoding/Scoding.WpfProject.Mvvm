@@ -1,4 +1,6 @@
-﻿using SiSoP.Common.Operations;
+﻿using Scoding.WpfProject.DI;
+using SiSoP.Common.Operations;
+using SiSoP.Common.Service;
 
 namespace Scoding.WpfProject
 {
@@ -11,7 +13,9 @@ namespace Scoding.WpfProject
 
         public void Initialize()
         {
+            WpfProjectContainer.Resolve<ILogger>().Info("Start");
 
+            WpfProjectContainer.Resolve<ILogger>().Info("Finish");
         }
     }
 }

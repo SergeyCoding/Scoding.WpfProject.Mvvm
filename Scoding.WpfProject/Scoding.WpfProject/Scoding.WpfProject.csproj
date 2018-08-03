@@ -89,6 +89,7 @@
     <Compile Include="AppDispatcher.cs" />
     <Compile Include="AppMsgConst.cs" />
     <Compile Include="DI\WpfProjectContainer.cs" />
+    <Compile Include="Handlers\StopHandler.cs" />
     <Compile Include="Handlers\StartHandler.cs" />
     <Compile Include="DI\LoggerServiceModule.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
