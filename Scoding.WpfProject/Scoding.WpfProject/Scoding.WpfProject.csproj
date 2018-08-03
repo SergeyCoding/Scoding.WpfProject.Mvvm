@@ -33,14 +33,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\SiSoP.Common.Service.Autofac.1.0.7\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Annotations, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SiSoP.Common.Service.NLog.1.0.1\lib\net40\Common.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\SiSoP.Common.Service.NLog.1.0.1\lib\net40\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="SiSoP.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SiSoP.Common.1.0.37\lib\net40\SiSoP.Common.dll</HintPath>
+      <HintPath>..\packages\SiSoP.Common.Service.Autofac.1.0.7\lib\net45\SiSoP.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SiSoP.Common.Service.Autofac, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SiSoP.Common.Service.Autofac.1.0.7\lib\net45\SiSoP.Common.Service.Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="SiSoP.Common.Service.NLog, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SiSoP.Common.Service.NLog.1.0.1\lib\net40\SiSoP.Common.Service.NLog.dll</HintPath>
     </Reference>
     <Reference Include="SiSoP.Common.Wpf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SiSoP.Common.Wpf.1.0.10\lib\net45\SiSoP.Common.Wpf.dll</HintPath>
@@ -77,7 +89,8 @@
     <Compile Include="AppDispatcher.cs" />
     <Compile Include="AppMsgConst.cs" />
     <Compile Include="DI\WpfProjectContainer.cs" />
-    <Compile Include="Handlers\Class1.cs" />
+    <Compile Include="Handlers\StartHandler.cs" />
+    <Compile Include="DI\LoggerServiceModule.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
