@@ -1,4 +1,7 @@
-﻿using Scoding.WpfProject.DI;
+﻿using System.Net.Mime;
+using System.Windows;
+using Scoding.WpfProject.Constants;
+using Scoding.WpfProject.DI;
 using SiSoP.Common.Operations;
 using SiSoP.Common.Service;
 
@@ -6,16 +9,26 @@ namespace Scoding.WpfProject
 {
     internal class AppDispatcher : IInitializable
     {
-        public static void Init()
-        {
-            new AppDispatcher().Initialize();
-        }
+        private readonly ILogger _logger = WpfProjectContainer.Resolve<ILogger>();
 
         public void Initialize()
         {
-            WpfProjectContainer.Resolve<ILogger>().Info("Start");
+            _logger.Info("Start");
 
-            WpfProjectContainer.Resolve<ILogger>().Info("Finish");
+            Application.Current.Exit += Current_Exit;
+            Application.Current.DispatcherUnhandledException += Current_DispatcherUnhandledException;
+
+            WpfProjectContainer.SendMessage(AppMsgConst.Start,AppMsgConst.AppDispather);
+        }
+
+        private void Current_Exit(object sender, ExitEventArgs e)
+        {
+            _logger.Info("Finish");
+        }
+
+        private void Current_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

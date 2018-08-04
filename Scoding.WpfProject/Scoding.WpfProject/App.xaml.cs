@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Scoding.WpfProject.DI;
 
 namespace Scoding.WpfProject
 {
@@ -9,7 +10,7 @@ namespace Scoding.WpfProject
     {
         private void App_OnStartup(object sender, StartupEventArgs e)
         {
-            AppDispatcher.Init();
+            WpfProjectContainer.Resolve<AppDispatcher>();
         }
     }
 }

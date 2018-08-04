@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using SiSoP.Common.SendMessage;
 using SiSoP.Common.Service.Autofac;
 
 namespace Scoding.WpfProject.DI
@@ -25,10 +26,18 @@ namespace Scoding.WpfProject.DI
             builder.RegisterModule<LoggerServiceModule>();
             builder.RegisterModule(ChainHandlersModule.Create());
             builder.RegisterModule<SendMessageModule>();
-            
+
+            // AppDispatcher
+            builder.RegisterType<AppDispatcher>().OnActivating(AutofacHelper.AutofacInitializeAction);
+
 
 
             Container = builder.Build();
+        }
+
+        public static void SendMessage(string msg, string source)
+        {
+            Resolve<ISendMessageOperation>().Execute(new SendMessageContext { Msg = msg, Source = source });
         }
     }
 }

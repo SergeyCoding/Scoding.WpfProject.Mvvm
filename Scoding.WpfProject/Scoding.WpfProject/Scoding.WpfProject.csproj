@@ -85,9 +85,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AppConst.cs" />
+    <Compile Include="Constants\AppConst.cs" />
     <Compile Include="AppDispatcher.cs" />
-    <Compile Include="AppMsgConst.cs" />
+    <Compile Include="Constants\AppSourceConst.cs" />
+    <Compile Include="Constants\AppMsgConst.cs" />
     <Compile Include="DI\WpfProjectContainer.cs" />
     <Compile Include="Handlers\StopHandler.cs" />
     <Compile Include="Handlers\StartHandler.cs" />

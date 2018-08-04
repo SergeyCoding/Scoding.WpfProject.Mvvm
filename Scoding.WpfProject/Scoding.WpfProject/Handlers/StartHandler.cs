@@ -1,4 +1,6 @@
 ﻿using System;
+using Scoding.WpfProject.Constants;
+using Scoding.WpfProject.DI;
 using SiSoP.Common.ChainDispatcher;
 using SiSoP.Common.SendMessage;
 
@@ -20,7 +22,7 @@ namespace Scoding.WpfProject.Handlers
 
         protected override void Accept(SendMessageContext message)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Scoding.WpfProject
+﻿namespace Scoding.WpfProject.Constants
 {
     /// <summary>
     /// 
